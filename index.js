@@ -1,12 +1,52 @@
 import express from "express"
+import mongoose from "mongoose"
 import ejs from "ejs"
 
+mongoose.connect("mongodb://127.0.0.1:27017/postsDb")
 const app = express()
 app.set("view engine", "ejs")
 app.use(express.static("public"))
+app.use(express.urlencoded({extended: true}))
 
-app.get("/", (request, response)=>{
-    response.render("home")
+const postSchema = new mongoose.Schema({
+    titulo: {type: String, required: true},
+    paragrafo: {type: String, required: true}
+})
+
+const PostModel = mongoose.model("Post", postSchema)
+
+app.get("/", async (request, response)=>{
+    try{
+        const list = await PostModel.find()
+        response.render("home", {
+            titulo: "Posts",
+            lista: list
+        })
+    }catch(erro){
+        response.send("Ocorreu um erro! Tente novamente mais tarde.")
+    }
+})
+app.get("/cadastrar", async (request, response)=>{
+    try{
+        response.render("cadastrar", {
+            titulo: "Cadastro"
+        })
+    }catch(erro){
+        response.send("Ocorreu um erro!")
+    }
+})
+
+app.post("/cadastrar", async (request, response)=>{
+    try{
+        let titulo = request.body.titulo
+        let paragrafo = request.body.paragrafo
+
+        const salvar = await PostModel.insertOne({titulo: titulo, paragrafo: paragrafo})
+
+        response.redirect("/")
+    }catch(erro){
+        response.send("Ocorreu um erro!")
+    }
 })
 
 app.listen(3000)

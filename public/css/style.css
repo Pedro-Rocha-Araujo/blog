@@ -53,10 +53,53 @@ section{
     padding: 1rem 2rem;
     border-radius: 1rem;
 }
+/* Cadastro */
+form{
+    width: 98vw;
+    max-width: 1860px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+label{
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    display: inline-block;
+    width: 6rem;
+}
+.campo{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+}
+input, textarea{
+    width: 100%;
+    max-width: 48rem;
+}
+input{
+    height: 2rem;
+}
+textarea{
+    min-height: 18rem;
+}
+button{
+    background-color: #332d27;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 2rem;
+    font-size: clamp(1rem, 2vw, 1.06rem);
+}
 
 @media screen and (max-width: 750px){
     header{
         flex-direction: column;
         gap: 0.8rem;
+    }
+    .campo{
+        flex-direction: column;
+        gap: 4px;
+        justify-content: center;
     }
 }
