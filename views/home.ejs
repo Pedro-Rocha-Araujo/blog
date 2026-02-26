@@ -8,7 +8,7 @@
                 </button>
             </form>
             <h2><%= post.titulo %></h2>
-            <p><%= post.paragrafo %></p>
+            <p class="paragrafo"><%= post.paragrafo %></p>
             <form action="/visualizar" method="post">
                 <button name="visualizar" value="<%= post._id %>" type="submit">
                     Ler mais...
