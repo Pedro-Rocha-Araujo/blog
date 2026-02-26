@@ -2,12 +2,12 @@
 
 
 ### O presente repositório hospeda um projeto de blog feito com as seguintes tecnologias:
-* HTML5 | CSS3 -> Usadas para fazer a interface responsiva e visualmente atrativa
-* JavaScript -> Usado para adcionar interação à página
-* Templates ejs ->  Reaproveitamento de código
-* NodeJs | Express -> Interligar o frontent ao banco de dados
-* MongoDb | Mongoose -> Usados para armazenar os dados usados na página
-* Git | GitHub -> Usados para fazer o versionamento do projeto
+* **HTML5 | CSS3 ->** Usadas para fazer a interface responsiva e visualmente atrativa
+* **JavaScript ->** Usado para adcionar interação à página
+* **Templates ejs ->**  Reaproveitamento de código
+* **NodeJs | Express ->** Interligar o frontent ao banco de dados
+* **MongoDb | Mongoose ->** Usados para armazenar os dados usados na página
+* **Git | GitHub ->** Usados para fazer o versionamento do projeto
 
 
 ### Funcionalidades
