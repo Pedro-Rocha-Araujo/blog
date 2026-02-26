@@ -36,6 +36,7 @@ app.get("/cadastrar", async (request, response)=>{
     }
 })
 
+
 app.post("/cadastrar", async (request, response)=>{
     try{
         let titulo = request.body.titulo
@@ -48,5 +49,27 @@ app.post("/cadastrar", async (request, response)=>{
         response.send("Ocorreu um erro!")
     }
 })
+app.post("/deletar", async (request, response)=>{
+    try{
+        let id = request.body.deletar
+        const deletar = await PostModel.deleteOne({_id: id})
+        response.redirect("/")
+    }catch(erro){
+        response.send("Ocorreu um erro!")
+    }
+})
+app.post("/visualizar", async (request, response)=>{
+    try{
+        let id = request.body.visualizar
+        const consulta = await PostModel.findOne({_id: id})
+        response.render("post", {
+            titulo: "Post",
+            list: consulta
+        })
+    }catch{
+        response.send("Ocorreu um erro!")
+    }
+})
+
 
 app.listen(3000)

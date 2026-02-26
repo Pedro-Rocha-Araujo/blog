@@ -2,9 +2,18 @@
 <main>
     <% lista.forEach((post)=>{ %>
         <section>
+            <form action="/deletar" method="post">
+                <button name="deletar" value="<%= post._id %>" type="submit">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </form>
             <h2><%= post.titulo %></h2>
             <p><%= post.paragrafo %></p>
-            <a href="#">Ler mais...</a>
+            <form action="/visualizar" method="post">
+                <button name="visualizar" value="<%= post._id %>" type="submit">
+                    Ler mais...
+                </button>
+            </form>
         </section>
     <% }) %>
 </main>

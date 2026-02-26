@@ -48,13 +48,20 @@ section{
     background-color: #fff;
     box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.363);
     width: 98vw;
-    max-width: 1860px;
+    max-width: 1480px;
     margin: 2rem auto;
     padding: 1rem 2rem;
     border-radius: 1rem;
+    position: relative;
+    word-break: break-all;
+}
+.fa-trash{
+    position: absolute;
+    top: 14px;
+    right: 14px;
 }
 /* Cadastro */
-form{
+form.cadastro{
     width: 98vw;
     max-width: 1860px;
     margin: 30px auto;
@@ -85,6 +92,10 @@ textarea{
     min-height: 18rem;
 }
 button{
+    background-color: transparent;
+    margin-top: 0.8rem;
+}
+.cadastro button{
     background-color: #332d27;
     color: #fff;
     padding: 8px 12px;
